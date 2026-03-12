@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB87DF0F-F8C5-B182-8D79-802D93042B1A}|PeliculasBBDD\\AplicacionConsola.csproj|c:\\users\\6003807\\source\\repos\\peliculasbbdd\\peliculasbbdd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB87DF0F-F8C5-B182-8D79-802D93042B1A}|PeliculasBBDD\\AplicacionConsola.csproj|solutionrelative:peliculasbbdd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E2ECB9-9BF5-4F05-85D5-80E2F82426BC}|PeliculasTest\\PeliculasTest.csproj|c:\\users\\6003807\\source\\repos\\peliculasbbdd\\peliculastest\\peliculasrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02E2ECB9-9BF5-4F05-85D5-80E2F82426BC}|PeliculasTest\\PeliculasTest.csproj|solutionrelative:peliculastest\\peliculasrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\accesodatos\\peliculasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\peliculasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\accesodatos\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02E2ECB9-9BF5-4F05-85D5-80E2F82426BC}|PeliculasTest\\PeliculasTest.csproj|c:\\users\\6003807\\source\\repos\\peliculasbbdd\\peliculastest\\databasetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02E2ECB9-9BF5-4F05-85D5-80E2F82426BC}|PeliculasTest\\PeliculasTest.csproj|solutionrelative:peliculastest\\databasetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB87DF0F-F8C5-B182-8D79-802D93042B1A}|PeliculasBBDD\\AplicacionConsola.csproj|c:\\users\\6003807\\source\\repos\\peliculasbbdd\\peliculasbbdd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB87DF0F-F8C5-B182-8D79-802D93042B1A}|PeliculasBBDD\\AplicacionConsola.csproj|solutionrelative:peliculasbbdd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\accesodatos\\pelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB10D77-940F-4AFD-86DC-5017E412733C}|AccesoDatos\\AccesoDatos.csproj|solutionrelative:accesodatos\\pelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PeliculasRepositoryTest.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasTest\\PeliculasRepositoryTest.cs",
+              "RelativeDocumentMoniker": "PeliculasTest\\PeliculasRepositoryTest.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasTest\\PeliculasRepositoryTest.cs",
+              "RelativeToolTip": "PeliculasTest\\PeliculasRepositoryTest.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T07:05:28.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataBaseTest.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasTest\\DataBaseTest.cs",
+              "RelativeDocumentMoniker": "PeliculasTest\\DataBaseTest.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasTest\\DataBaseTest.cs",
+              "RelativeToolTip": "PeliculasTest\\DataBaseTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T16:27:06.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\DataBase.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\DataBase.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\DataBase.cs",
+              "RelativeToolTip": "AccesoDatos\\DataBase.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T16:22:47.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasBBDD\\Menu.cs",
+              "RelativeDocumentMoniker": "PeliculasBBDD\\Menu.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasBBDD\\Menu.cs",
+              "RelativeToolTip": "PeliculasBBDD\\Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T16:21:10.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Pelicula.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\Pelicula.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\Pelicula.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\Pelicula.cs",
+              "RelativeToolTip": "AccesoDatos\\Pelicula.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T16:22:02.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PeliculasRepository.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\PeliculasRepository.cs",
+              "RelativeDocumentMoniker": "AccesoDatos\\PeliculasRepository.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\AccesoDatos\\PeliculasRepository.cs",
+              "RelativeToolTip": "AccesoDatos\\PeliculasRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T16:20:39.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasBBDD\\Program.cs",
+              "RelativeDocumentMoniker": "PeliculasBBDD\\Program.cs",
+              "ToolTip": "C:\\Users\\6003807\\source\\repos\\PeliculasBBDD\\PeliculasBBDD\\Program.cs",
+              "RelativeToolTip": "PeliculasBBDD\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T16:18:31.827Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

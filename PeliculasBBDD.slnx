@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="AccesoDatos/AccesoDatos.csproj" Id="acb10d77-940f-4afd-86dc-5017e412733c" />
+  <Project Path="PeliculasBBDD/AplicacionConsola.csproj" />
+  <Project Path="PeliculasTest/PeliculasTest.csproj" Id="02e2ecb9-9bf5-4f05-85d5-80e2f82426bc" />
+</Solution>
