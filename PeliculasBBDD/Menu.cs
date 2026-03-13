@@ -10,6 +10,7 @@ namespace AplicacionConsola
         PeliculasRepository pr = new PeliculasRepository();
         public void MenuPrincipal()
         {
+            
             int opcion;
             do
             {
@@ -17,9 +18,10 @@ namespace AplicacionConsola
                 Console.WriteLine("1.- Añadir pelicula");
                 Console.WriteLine("2.- Eliminar pelicula");
                 Console.WriteLine("3.- Ver Catalogo");
+                Console.WriteLine("4.- Actualizar pelicula");
                 Console.WriteLine("0.- Salir");
 
-                while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 0 || opcion > 3)
+                while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 0 || opcion > 4)
                 {
                     Console.WriteLine("Opción no válida. Intente de nuevo:");
                 }
@@ -41,13 +43,19 @@ namespace AplicacionConsola
                     case 3:
                         pr.ImprimirLista();
                         break;
+                    case 4:
+                        Console.WriteLine("---Actualizar Pelicula---");
+                        string peliculaID = pr.PedirID();
+                        string columna = pr.PedirColumna();
+                        string nuevoDato = pr.PedirDatoString();
+                        pr.ActualizarPelicula(peliculaID, columna, nuevoDato);
+                        break;
                     case 0:
                         Console.WriteLine("Adios");
                         break;
                 }
 
             } while (opcion != 0);
-
         }
     }
 }

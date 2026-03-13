@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -205,6 +206,107 @@ namespace AccesoDatos
                 Console.WriteLine("Año no válido. Introduce un año entre 0 y 2050:");
             }
             return anio;
+        }
+
+        public void ActualizarPelicula (string id, string columna, string nuevoDato)
+        {
+            
+            // Validar columna destino
+            
+            SqlDbType tipoParam;
+            object valor;
+            switch (columna)
+            {
+                case "Titulo":
+                    tipoParam = SqlDbType.NVarChar;
+                    valor = nuevoDato; // valida longitud si procede
+                    break;
+                case "Director":
+                    tipoParam = SqlDbType.NVarChar;
+                    valor = nuevoDato;
+                    break;
+                case "Anio":
+                    tipoParam = SqlDbType.Int;
+                    if (!int.TryParse(nuevoDato, out var anio))
+                    {
+                        Console.WriteLine("El campo Año debe ser numérico.");
+                        PedirDatoString();
+                    }
+                    //throw new ArgumentException("El campo Anio debe ser numérico."); //TODO: Sacar el conversor a string del metodo actualizar
+                    valor = anio;
+                    break;
+                default:
+                    throw new ArgumentException("Campo no válido. Usa: Titulo, Director o Año.");
+            } //Esto lo voy a mover a su propio metodo
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String sql = "";
+                sql = sql + "UPDATE [dbo].[Peliculas] " + "\n";
+                sql = sql + $"   SET {columna} = @nuevoDato " + "\n";
+                sql = sql + "WHERE PeliculaID = @id";
+
+                using (SqlCommand comando = new SqlCommand(sql, conexion))
+                {
+                    comando.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+                    comando.Parameters.AddWithValue("@nuevoDato", tipoParam).Value = valor;
+
+                    var actualizadas = comando.ExecuteNonQuery();
+
+                    if (actualizadas > 0)
+                    {
+                        Console.WriteLine("Pelicula actualizada con exito");
+                        ImprimirPelicula(ObtenerPorId(id));
+                    }
+                }
+            }
+        }
+
+        public string PedirColumna()
+        {
+            //TODO: Cambiar opcion a elegir con numero
+            string columna;
+            do
+            {
+                Console.WriteLine("Dato a cambiar: ");
+                columna = Console.ReadLine().Trim();
+
+                if (string.IsNullOrWhiteSpace(columna))
+                    Console.WriteLine("El dato no puede estar vacío.");
+            }
+            while (string.IsNullOrWhiteSpace(columna));
+            // Validar columna destino
+            switch (columna)
+            {
+                case "Titulo":
+                    columna = "Titulo";
+                    break;
+                case "Director":
+                    columna = "Director";
+                    break;
+                case "Año":
+                    columna = "Anio";
+                    break;
+                default:
+                    Console.WriteLine("Campo no válido. Usa: Titulo, Director o Año.");
+                    PedirColumna();
+                    break;
+            }
+            return columna;
+        }
+
+        public virtual string PedirDatoString()
+        {
+            string id;
+            do
+            {
+                Console.WriteLine("Dato: ");
+                id = Console.ReadLine().Trim();
+
+                if (string.IsNullOrWhiteSpace(id))
+                    Console.WriteLine("El Dato no puede estar vacío.");
+            }
+            while (string.IsNullOrWhiteSpace(id));
+            return id;
         }
     }
 }
