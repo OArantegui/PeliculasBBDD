@@ -28,11 +28,15 @@ namespace AplicacionConsola
                 {
                     case 1:
                         Console.WriteLine("---Añadir Pelicula---");
-                        pr.InsertarPelicula();
+                        string id = pr.PedirID();
+                        string titulo = pr.PedirTitulo();
+                        string director = pr.PedirDirector();
+                        int anio = pr.PedirAnio();
+                        pr.InsertarPelicula(pr.InstanciaPelicula(id, titulo, director, anio));
                         break;
                     case 2:
                         Console.WriteLine("---Eliminar Pelicula---");
-                        pr.EliminarPelicula(pr.PedirString("ID"));
+                        pr.EliminarPelicula(pr.PedirID());
                         break;
                     case 3:
                         pr.ImprimirLista();

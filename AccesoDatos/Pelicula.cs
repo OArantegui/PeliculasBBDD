@@ -13,5 +13,14 @@ namespace AccesoDatos
         public string Titulo { get; set; }
         public string Director { get; set; }
         public int Anio { get; set; }        
+
+        public Pelicula(string id, string titulo, string director, int anio) 
+        {
+            PeliculaID = id;
+            Titulo = titulo;
+            Director = director;
+            Anio = anio;
+        }
+        public Pelicula() { }
     }   
 }

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace AccesoDatos
@@ -90,9 +91,9 @@ namespace AccesoDatos
             return pelicula;
         }
 
-        public void InsertarPelicula()
+        public void InsertarPelicula(Pelicula pelicula)
         {
-            Pelicula pelicula = new Pelicula();
+            
             using (var conexion = DataBase.GetSqlConnection())
             {
                 String sql = "";
@@ -109,23 +110,6 @@ namespace AccesoDatos
 
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
-                    string PeliculaID = PedirString("ID");
-                    //Asignamos valor a nuevo objeto
-                    pelicula.PeliculaID = PeliculaID;
-
-                    string Titulo = PedirString("Titulo");
-                    //Asignamos valor a nuevo objeto
-                    pelicula.Titulo = Titulo;
-
-                    string director = PedirString("Direcotr");
-                    //Asignamos valor a nuevo objeto
-                    pelicula.Director = director;
-
-                    Console.WriteLine("Año:");
-                    int anio = PedirAnio();
-                    //Asignamos valor a nuevo objeto
-                    pelicula.Anio = anio;
-
                     comando.Parameters.AddWithValue("peliculaId", pelicula.PeliculaID);
                     comando.Parameters.AddWithValue("titulo", pelicula.Titulo);
                     comando.Parameters.AddWithValue("director", pelicula.Director);
@@ -141,7 +125,53 @@ namespace AccesoDatos
                 }
             }
         }
+        public Pelicula InstanciaPelicula(string id, string titulo, string director, int anio) //Igual al constructor de pelicula para tenerlo en la misma lase
+        {
+            Pelicula pelicula = new Pelicula(id, titulo, director, anio);
+            return pelicula;
+        }
+        public virtual string PedirID()
+        {
+            string id;
+            do
+            {
+                Console.WriteLine("ID: ");
+                id = Console.ReadLine().Trim();
 
+                if (string.IsNullOrWhiteSpace(id))
+                    Console.WriteLine("El ID no puede estar vacío.");
+            }
+            while (string.IsNullOrWhiteSpace(id));
+            return id;
+        }
+        public virtual string PedirTitulo()
+        {
+            string titulo;
+            do
+            {
+                Console.WriteLine("Titulo: ");
+                titulo = Console.ReadLine().Trim();
+
+                if (string.IsNullOrWhiteSpace(titulo))
+                    Console.WriteLine("El ID no puede estar vacío.");
+            }
+            while (string.IsNullOrWhiteSpace(titulo));
+            return titulo;
+        }
+        public virtual string PedirDirector()
+        {
+            string director;
+            do
+            {
+                Console.WriteLine("Director: ");
+                director = Console.ReadLine().Trim();
+
+                if (string.IsNullOrWhiteSpace(director))
+                    Console.WriteLine("El ID no puede estar vacío.");
+            }
+            while (string.IsNullOrWhiteSpace(director));
+            return director;
+        }
         public void EliminarPelicula(string id)
         {
             int eliminados = 0;
@@ -165,24 +195,11 @@ namespace AccesoDatos
             }
         }
 
-        public string PedirString(string valor) 
-        {
-            string dato;
-            do
-            {
-                Console.WriteLine($"{valor}: ");
-                dato = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(dato))
-                    Console.WriteLine("El dato no puede estar vacío.");
-            }
-            while (string.IsNullOrWhiteSpace(dato));
-            return dato;
-        }
-        public int PedirAnio()
+        
+        public virtual int PedirAnio()
         {
             int anio;
-
+            Console.WriteLine("Año: ");
             while (!int.TryParse(Console.ReadLine(), out anio) || anio < 0 || anio > 2050)
             {
                 Console.WriteLine("Año no válido. Introduce un año entre 0 y 2050:");

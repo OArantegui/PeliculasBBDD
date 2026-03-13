@@ -69,5 +69,56 @@ namespace AccesoDatos
             Pelicula resultado = mockRepo.Object.ObtenerPorId("P001");
             Xunit.Assert.Equal(esperada.Titulo, resultado.Titulo);
         }
+
+        //Test eliminar pelicula
+        [Test]
+        public void Test_EliminarPelicula()
+        {
+            //Definimos ID a eliminar
+            string idEliminar = "P010";
+            //Guardamos pelicula para recuperarla despues
+            Pelicula guardada = mockRepo.Object.ObtenerPorId(idEliminar);
+            //Eliminamos
+            mockRepo.Object.EliminarPelicula(idEliminar);
+            //Confirmamos
+            Pelicula eliminada = mockRepo.Object.ObtenerPorId(idEliminar);
+            Xunit.Assert.Null(eliminada);
+            //Volvemos a crear para que los tests no afecten a la BBDD real
+            mockRepo.Object.InsertarPelicula(guardada);
+        }
+
+        //Tests pedir datos
+        [Test]
+        public void test_PedirId()
+        {
+            string esperado = "ID";
+            mockRepo.Setup(x => x.PedirID()).Returns("ID");
+            string valor =mockRepo.Object.PedirID();
+            Xunit.Assert.Equal(esperado, valor);
+        }
+        [Test]
+        public void test_PedirTitulo()
+        {
+            string esperado = "Prueba";
+            mockRepo.Setup(x => x.PedirTitulo()).Returns("Prueba");
+            string valor = mockRepo.Object.PedirTitulo();
+            Xunit.Assert.Equal(esperado, valor);
+        }
+        [Test]
+        public void test_PedirDirector()
+        {
+            string esperado = "Prueba";
+            mockRepo.Setup(x => x.PedirDirector()).Returns("Prueba");
+            string valor = mockRepo.Object.PedirDirector();
+            Xunit.Assert.Equal(esperado, valor);
+        }
+        [Test]
+        public void test_PedirAnio()
+        {
+            int esperado = 1;
+            mockRepo.Setup(x => x.PedirAnio()).Returns(1);
+            int valor = mockRepo.Object.PedirAnio();
+            Xunit.Assert.Equal(esperado, valor);
+        }
     }
 }

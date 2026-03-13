@@ -22,3 +22,4 @@ C:\Users\6003807\source\repos\PeliculasBBDD\PeliculasBBDD\bin\Debug\net10.0\runt
 C:\Users\6003807\source\repos\PeliculasBBDD\PeliculasBBDD\bin\Debug\net10.0\runtimes\win-x86\native\sni.dll
 C:\Users\6003807\source\repos\PeliculasBBDD\PeliculasBBDD\bin\Debug\net10.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\6003807\source\repos\PeliculasBBDD\PeliculasBBDD\bin\Debug\net10.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\6003807\source\repos\PeliculasBBDD\PeliculasBBDD\obj\Debug\net10.0\AplicacionConsola.sourcelink.json
