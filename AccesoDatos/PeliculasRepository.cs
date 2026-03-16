@@ -261,7 +261,7 @@ namespace AccesoDatos
             }
         }
 
-        public string PedirColumna()
+        public virtual string PedirColumna()
         {
             //TODO: Cambiar opcion a elegir con numero
             string columna;
@@ -296,17 +296,18 @@ namespace AccesoDatos
 
         public virtual string PedirDatoString()
         {
-            string id;
+            string dato;
             do
             {
                 Console.WriteLine("Dato: ");
-                id = Console.ReadLine().Trim();
+                dato = Console.ReadLine().Trim();
 
-                if (string.IsNullOrWhiteSpace(id))
+                if (string.IsNullOrWhiteSpace(dato))
                     Console.WriteLine("El Dato no puede estar vacío.");
             }
-            while (string.IsNullOrWhiteSpace(id));
-            return id;
+            while (string.IsNullOrWhiteSpace(dato));
+            return dato;
         }
+        //TODO: Añadir funcionalidad elegir ids duplicadas sacar lista y dar a elegir
     }
 }

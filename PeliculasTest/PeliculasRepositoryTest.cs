@@ -89,7 +89,7 @@ namespace AccesoDatos
 
         //Tests pedir datos
         [Test]
-        public void test_PedirId()
+        public void Test_PedirId()
         {
             string esperado = "ID";
             mockRepo.Setup(x => x.PedirID()).Returns("ID");
@@ -97,7 +97,7 @@ namespace AccesoDatos
             Xunit.Assert.Equal(esperado, valor);
         }
         [Test]
-        public void test_PedirTitulo()
+        public void Test_PedirTitulo()
         {
             string esperado = "Prueba";
             mockRepo.Setup(x => x.PedirTitulo()).Returns("Prueba");
@@ -105,7 +105,7 @@ namespace AccesoDatos
             Xunit.Assert.Equal(esperado, valor);
         }
         [Test]
-        public void test_PedirDirector()
+        public void Test_PedirDirector()
         {
             string esperado = "Prueba";
             mockRepo.Setup(x => x.PedirDirector()).Returns("Prueba");
@@ -113,7 +113,7 @@ namespace AccesoDatos
             Xunit.Assert.Equal(esperado, valor);
         }
         [Test]
-        public void test_PedirAnio()
+        public void Test_PedirAnio()
         {
             int esperado = 1;
             mockRepo.Setup(x => x.PedirAnio()).Returns(1);
@@ -121,6 +121,31 @@ namespace AccesoDatos
             Xunit.Assert.Equal(esperado, valor);
         }
 
-        //TODO: Tests Actualizar Pelicula, pedir Columna y pedir DatoString
+        [Test]
+        public void Test_ActualizarPelicula()
+        {
+            String tituloAntiguo = mockRepo.Object.ObtenerPorId("P002").Titulo;
+            mockRepo.Object.ActualizarPelicula("P002", "Titulo", "Avengers: Infinity War");
+            Xunit.Assert.NotEqual(mockRepo.Object.ObtenerPorId("P002").Titulo, tituloAntiguo);
+            //Revertimos los cambios para no afectar la bbdd real
+            mockRepo.Object.ActualizarPelicula("P002", "Titulo", "Avengers: Endgame");
+
+        }
+        [Test]
+        public void Test_PedirColumna()
+        {   
+            string esperado = "Titulo";
+            mockRepo.Setup(x => x.PedirColumna()).Returns("Titulo");
+            string valor = mockRepo.Object.PedirColumna();
+            Xunit.Assert.Equal(esperado, valor);
+        }
+        [Test]
+        public void Test_PedirDatoString()
+        {
+            string esperado = "Dato";
+            mockRepo.Setup(x => x.PedirDatoString()).Returns("Dato");
+            string valor = mockRepo.Object.PedirDatoString();
+            Xunit.Assert.Equal(esperado, valor);
+        }
     }
 }
