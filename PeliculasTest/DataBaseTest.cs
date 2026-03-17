@@ -1,4 +1,5 @@
-﻿using AccesoDatos;
+﻿//Oscar Arantegui
+using AccesoDatos;
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using System;

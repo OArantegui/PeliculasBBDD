@@ -227,12 +227,13 @@ namespace AccesoDatos
                     break;
                 case "Anio":
                     tipoParam = SqlDbType.Int;
-                    if (!int.TryParse(nuevoDato, out var anio))
+                    int anio;
+                    // Bucle hasta que el usuario meta un número de verdad
+                    while (!int.TryParse(nuevoDato, out anio))
                     {
                         Console.WriteLine("El campo Año debe ser numérico.");
-                        PedirDatoString();
+                        nuevoDato = PedirDatoString(); // Ahora sí actualizamos la variable
                     }
-                    //throw new ArgumentException("El campo Anio debe ser numérico."); //TODO: Sacar el conversor a string del metodo actualizar
                     valor = anio;
                     break;
                 default:
@@ -248,7 +249,7 @@ namespace AccesoDatos
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
                     comando.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
-                    comando.Parameters.AddWithValue("@nuevoDato", tipoParam).Value = valor;
+                    comando.Parameters.Add("@nuevoDato", tipoParam).Value = valor;
 
                     var actualizadas = comando.ExecuteNonQuery();
 
@@ -257,40 +258,49 @@ namespace AccesoDatos
                         Console.WriteLine("Pelicula actualizada con exito");
                         ImprimirPelicula(ObtenerPorId(id));
                     }
+                    else
+                    {
+                        Console.WriteLine("No se encontró la película con ese ID.");
+                    }
                 }
             }
         }
 
         public virtual string PedirColumna()
         {
-            //TODO: Cambiar opcion a elegir con numero
-            string columna;
+            // TODO: Cambiar opcion a elegir con numero
+            string columna = "";
+            bool columnaValida = false;
+
             do
             {
-                Console.WriteLine("Dato a cambiar: ");
+                Console.WriteLine("Dato a cambiar (Titulo, Director, Año): ");
                 columna = Console.ReadLine().Trim();
 
                 if (string.IsNullOrWhiteSpace(columna))
+                {
                     Console.WriteLine("El dato no puede estar vacío.");
+                    continue;
+                }
+
+                switch (columna)
+                {
+                    case "Titulo":
+                    case "Director":
+                        columnaValida = true;
+                        break;
+                    case "Año":
+                    case "Anio":
+                        columna = "Anio"; // Lo estandarizamos para la BD
+                        columnaValida = true;
+                        break;
+                    default:
+                        Console.WriteLine("Campo no válido. Usa: Titulo, Director o Año.");
+                        break;
+                }
             }
-            while (string.IsNullOrWhiteSpace(columna));
-            // Validar columna destino
-            switch (columna)
-            {
-                case "Titulo":
-                    columna = "Titulo";
-                    break;
-                case "Director":
-                    columna = "Director";
-                    break;
-                case "Año":
-                    columna = "Anio";
-                    break;
-                default:
-                    Console.WriteLine("Campo no válido. Usa: Titulo, Director o Año.");
-                    PedirColumna();
-                    break;
-            }
+            while (!columnaValida);
+
             return columna;
         }
 

@@ -1,4 +1,5 @@
-﻿using AccesoDatos;
+﻿//Oscar Arantegui
+using AccesoDatos;
 using System;
 using System.Collections.Generic;
 using System.Text;

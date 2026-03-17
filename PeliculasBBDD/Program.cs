@@ -1,4 +1,5 @@
-﻿namespace AplicacionConsola
+﻿//Oscar Arantegui
+namespace AplicacionConsola
 {
     internal static class Program
     {
